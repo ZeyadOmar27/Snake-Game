@@ -102,6 +102,10 @@ def move():
         food_initial_position_x = random.randint(1, COLUMNS - 1) * TILE_SIZE
         food_initial_position_y = random.randint(1, ROWS - 1) * TILE_SIZE
         score +=1
+
+    while (food_initial_position_x, food_initial_position_y) in snake_body:
+        food_initial_position_x = random.randint(1, COLUMNS - 1) * TILE_SIZE
+        food_initial_position_y = random.randint(1, ROWS - 1) * TILE_SIZE
     
     # Update the snake body from tail to head
     for i in range(len(snake_body) - 1, 0, -1):
